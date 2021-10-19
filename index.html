@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #div1{
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+            background-color: white;
+            color: blue;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 110px;
+        }
+
+        #div2{
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+            background-color: blue;
+            color: white;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 110px;
+        }
+
+        #botao{
+            border-radius: 5px;
+            margin-left: 45%;
+            margin-right: 45%;
+        }
+
+    </style>
+    <title>addEventListener e removeEventListener</title>
+</head>
+
+<body>
+    <br>
+    <div id="div1">
+        <p id="p1">Eu sou a DIV 1</p>
+    </div>
+    <br>
+    <div id="div2">
+        <p id="p2">Eu sou a DIV 2</p>
+    </div>
+    <br>
+    <button id="botao" onclick="remove()">Clique aqui para Remover Evento Listener</button>
+    <script>
+        function msgP1(){
+            alert("Parágrafo !");
+        }
+
+        function msgp2(){
+            alert("Parágrafo !")
+        }
+
+        function msgDiv1(){
+            alert("DIV !");
+        }
+
+        function msgDiv2(){
+            alert("DIV !");
+        }
+
+        function remove(){
+            document.getElementById("p1").removeEventListener("click", msgP1, false);  
+            document.getElementById("div1").removeEventListener("click", msgDiv1, false);
+            document.getElementById("p2").removeEventListener("click", msgp2, true);
+            document.getElementById("div2").removeEventListener("click", msgDiv2, true);
+        }
+        
+        document.getElementById("p1").addEventListener("click", msgP1, false);
+        document.getElementById("div1").addEventListener("click", msgDiv1, false);
+        document.getElementById("p2").addEventListener("click", msgp2, true);
+        document.getElementById("div2").addEventListener("click", msgDiv2, true);
+    </script>
+
+</body>
+</html>
